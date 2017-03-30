@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Joonis</title>
+    <script type="text/javascript">
+      function joonista(){
+         var g = document.getElementById("tahvel").getContext("2d");
+         var laius = parseInt(document.getElementById("laiuskast").value);
+         var korgus = parseInt(document.getElementById("korguskast").value);
+         var vasakult = parseInt(document.getElementById("vasakkast").value);
+         var ylalt = parseInt(document.getElementById("ylakast").value);
+         g.fillStyle = "gray";
+         g.fillRect(0, 0, 300, 200);
+         g.fillStyle = "black";
+         g.fillRect(vasakult, ylalt, laius, korgus); //x, y, laius, kõrgus
+         g.fillText(korgus, vasakult-20, ylalt+20);
+         g.fillText(laius, vasakult+20, ylalt-20);
+} </script>
+  </head>
+  <body>
+    <h1>Joonis</h1>
+    <canvas id="tahvel" width="300" height="200"
+              style="background-color:gray"></canvas><br />
+    <input type="text" id="vasakkast"  value="40" />
+    <input type="text" id="ylakast"  value="40" /><br />
+    <input type="text" id="laiuskast"  value="40" /> x
+    <input type="text" id="korguskast" value="60" />
+    <input type="button" value="Joonista" onclick="joonista()" />
+  </body>
+</html>
