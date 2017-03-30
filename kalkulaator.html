@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html>
-//
 <meta charset="UTF-8" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script type="text/javascript">
-   function arvuta(){
-        var letihind=
-            parseFloat(document.getElementById("letihind").value);
-        var km=letihind*20/120;
-        //km=Math.round(km*100)/100;
-        //ümardus 2 kohta pärast koma.
-        km=km.toFixed(2);
-        document.getElementById("vastus").innerHTML=km;
-} </script>
+
+/* Koosta kalkulaator valuutavahetusel kättesaadava summa arvutamiseks sisseantud summa, kursi ja komisjonitasu järgi. */
+
+  function calculate() {
+      var sum = parseFloat(document.getElementById("sum").value);
+      var currency = parseFloat(document.getElementById("currency").value);
+      var commision = parseFloat(document.getElementById("currency").value);
+      var answer = (sum - commision) * currency;
+      answer = answer.toFixed(2);
+      document.getElementById("answer").innerHTML = "Vastus on "+answer;
+  }
+
+</script>
 <head>
-   <title>Käibemaksu arvutus</title>
-  </head>
-  <body>
-     <h1>Katsetuste leht</h1>
-       Palun sisesta letihind:
-        <input type="text" id="letihind" />
-        <input type="button" value="OK" onclick="arvuta();" />
-        <div id="vastus">
-          Vastuse koht.
+  <title>Valuuta arvutus</title>
+</head>
+<body>
+  Kalkulaator<br>
+        
+        Palun sisesta summa: <br>
+        <input type="text" id="sum" /><br>
+        Palun sisesta kurss:<br>
+        <input type="text" id="currency" /><br>
+        Palun sisesta komisjonitasu: <br>
+        <input type="text" id="commision" /><br>
+
+        <input type="button" value="OK" onclick="calculate();" />
+
+        <div id="answer"><br>
+          Vastus:
         </div>
-  </body>
+
+</body>
 </html>
