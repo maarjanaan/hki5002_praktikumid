@@ -7,7 +7,8 @@
         var letihind=
             parseFloat(document.getElementById("letihind").value);
         var km=letihind*20/120;
-        km=Math.round(km*100)/100; //ümardus 2 kohta pärast koma.
+        //km=Math.round(km*100)/100;
+        //ümardus 2 kohta pärast koma.
         km=km.toFixed(2);
         document.getElementById("vastus").innerHTML=km;
 } </script>
