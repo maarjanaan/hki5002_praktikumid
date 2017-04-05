@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<title>Kalkulaator</title>
+	<script>
+		function Arvutaja(kihinimi){
+			this.algus=function(){
+				this.kiht=document.getElementById(kihinimi);
+				this.kiht.innerHTML=
+				"Tollid: <input type='text' id='kast1' /> "+
+				"<input type='button' value='Sentimeetriteks' "+
+				"onClick='a1.arvuta();' /> "+
+				"<div id='vastus'></div>";
+				this.kast=document.getElementById("kast1");
+				this.vastusekiht=document.getElementById("vastus");
+			}
+			this.arvuta=function(){
+				this.vastusekiht.innerHTML=parseFloat(this.kast.value)*2.54;
+			}
+			this.algus();
+			}
+		var a1;
+		function lehealgus(){
+			a1=new Arvutaja("kiht1");
+		}
+	</script>
+</head>
+<body onload="lehealgus();">
+	<h1>Arvutamine</h1>
+	<div id="kiht1"></div>
+</body>
+</html>
