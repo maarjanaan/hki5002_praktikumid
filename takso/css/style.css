@@ -1,0 +1,57 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body.Day {
+	background: #FFF;
+	color: #000;
+}
+
+body.Night {
+	background: #000;
+	color: #FFF;
+}
+
+* {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+h1 {
+	font-size: 16px;
+	font-style: bold;
+	padding: 0px 0px 15px 0px;
+}
+
+.main {
+	top: 10px;
+	left: 20px;
+	width: 320px;
+	padding: 20px 0px 20px 30px;
+}
+
+.answer {
+	padding: 10px 0px;
+}
+
+.buttons {
+	position: relative;
+	left: 350px;
+}
+
+.button {
+  border-radius: 1px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-style: bold;
+  font-size: 12px;
+  padding: 1px 6px;
+  background: #FFF;
+  border: solid #333 1px;
+}
+
+.button:hover {
+  background: #000;
+  color: #FFF;
+  text-decoration: none;
+}

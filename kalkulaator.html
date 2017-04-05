@@ -1,10 +1,10 @@
+<!-- Koosta kalkulaator valuutavahetusel kättesaadava summa arvutamiseks sisseantud summa, kursi ja komisjonitasu järgi. -->
+
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script type="text/javascript">
-
-/* Koosta kalkulaator valuutavahetusel kättesaadava summa arvutamiseks sisseantud summa, kursi ja komisjonitasu järgi. */
 
   function calculate() {
       var sum = parseFloat(document.getElementById("sum").value);
@@ -20,8 +20,10 @@
   <title>Valuuta arvutus</title>
 </head>
 <body>
-  Kalkulaator<br>
-        
+<div class="col-md-2">
+  <b>Kalkulaator</b>
+</div><br>
+    <div class="col-md-2">
         Palun sisesta summa: <br>
         <input type="text" id="sum" /><br>
         Palun sisesta kurss:<br>
@@ -29,11 +31,11 @@
         Palun sisesta komisjonitasu: <br>
         <input type="text" id="commision" /><br>
 
-        <input type="button" value="OK" onclick="calculate();" />
-
+        <input type="button" class="btn btn-primary" value="OK" onclick="calculate();" />
+    
         <div id="answer"><br>
           Vastus:
         </div>
-
+    </div>
 </body>
 </html>

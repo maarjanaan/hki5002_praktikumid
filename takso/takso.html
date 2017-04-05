@@ -1,0 +1,37 @@
+<!--
+• Koosta taksohinna kalkulaator. Näha on sisseistumistasu (2.9) ja kilomeetrihind. Väljastatakse
+sõiduhind vastavalt sisestatud kilomeetrite arvule.
+• Lisa kalkulaatorile seisundid öö (0.7) ja päev (0.55). Vastavalt muutub kalkulaatori juures olev pilt.
+Öösel on hinnad kõrgemad. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Taksomeeter</title>
+	<meta charset="UTF-8" />
+	<script src="js/app.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
+</head>
+<body>
+	<div class="main">
+	  	<h1>Taksomeeter</h1>
+	  		Sõidu alustamise tasu: 2.9€<br>
+
+	  		Millal:
+	        	<select id="dayNight" onchange="dayOrNight()">
+	        		<option></option>
+	                <option value="Day">Päeval</option>
+	                <option value="Night">Öösel</option>
+	            </select><br>
+
+	        Kilomeetrihind: <span id="kmPrice"></span><br>
+
+	        Kilomeetreid:
+	        <input type="number" id="km"><br>
+
+	  		<input class= "button" type="button" value="Arvuta" onclick="calculate()" /><br>
+
+	  		<div class="answer" id="answer">Sõidu hind: </div>
+	</div>
+</body>
+</html>
