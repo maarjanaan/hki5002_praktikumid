@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+	<title>Kalkulaator</title>
+		<script>
+			function Arvutaja(kihinimi){
+				this.algus = function(){
+					this.kiht = document.getElementById(kihinimi);
+					window[kihinimi+"_kalkulaator"] = this;
+					this.kiht.innerHTML =
+					"Tollid: <input type='text' id='"+kihinimi+"_kast1' /> "+
+					"<input type='button' value='Sentimeetriteks' "+
+					"onClick='"+kihinimi+"_kalkulaator.arvuta();' /> "+
+					"<div id='"+kihinimi+"_vastus'></div>";
+					this.kast=document.getElementById(kihinimi+"_kast1");
+					this.vastusekiht=document.getElementById(kihinimi+"_vastus");
+				}
+				this.arvuta = function(){
+					this.vastusekiht.innerHTML = parseFloat(this.kast.value)*2.54;
+				}
+				this.algus();
+			}
+			function lehealgus(){
+					new Arvutaja("kiht1");
+					new Arvutaja("kiht2");
+			}
+		</script>
+	</head>
+<body onload="lehealgus();">
+	<h1>Arvutamine</h1>
+	<div id="kiht1"></div>
+	<div id="kiht2"></div>
+</body>
+</html>
