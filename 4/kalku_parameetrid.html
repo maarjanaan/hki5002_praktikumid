@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<title>Kalkulaator</title>
+	<script>
+
+	class Calculator {
+			constructor(layername, boxtext, buttontext, coefficient) {
+				this.layerName = layername;
+				this.layer = document.getElementById(layername);
+				window[layername+"_calculator"] = this;
+				this.layer.innerHTML =
+					boxtext + ": <input type='text' id='" +layername+ "_box' /> " +
+					"<input type='button' value='" +buttontext+ "' onClick='" +layername+"_calculator.calculate();' />" +
+					"<span id='" +layername+ "_result'></span>";
+				this.box = document.getElementById(layername + "_box");
+				this.resultlayer = document.getElementById(layername + "_result");
+				this.coefficient = coefficient;
+			}
+
+			calculate(){
+				this.resultlayer.innerHTML = parseFloat(this.box.value) * this.coefficient;
+			}	
+		}
+
+			function begin(){
+				new Calculator("layer1", "Eurod", "Dollariteks", 1.3);
+				new Calculator("layer2", "Tollid", "Sentimeetriteks", 2.54);
+			}
+
+	</script>
+</head>
+<body onload="begin();">
+	<h1>Arvutamine</h1>
+		<div id="layer1"></div>
+		<div id="layer2"></div>
+</body>
+</html>
