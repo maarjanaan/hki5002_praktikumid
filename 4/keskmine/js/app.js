@@ -13,14 +13,14 @@ class Box {
 
 class Calculator {
 			constructor(id) {
-			        this.numbers = [];
-			        this.id = id;
-			        this.div = document.createElement("div");
-			        this.div.setAttribute("id", id);
-			        this.divToLayer = document.getElementById("layer");
-			        document.body.insertBefore(this.div, this.divToLayer);
-			        document.querySelector('#add').addEventListener('click', this.addBox.bind(this));
-			        document.querySelector('#average').addEventListener('click', this.calculate.bind(this));
+				this.numbers = [];
+				this.id = id;
+				this.div = document.createElement("div");
+				this.div.setAttribute("id", id);
+				this.divToLayer = document.getElementById("layer");
+				document.body.insertBefore(this.div, this.divToLayer);
+				document.querySelector('#add').addEventListener('click', this.addBox.bind(this));
+				document.querySelector('#average').addEventListener('click', this.calculate.bind(this));
 			}
 
 			calculate(){
