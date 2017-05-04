@@ -34,12 +34,12 @@ class Calculator {
 	}
 
 	numberToZero() {
-        this.number = 0;
-        this.showAnswer();
+		this.number = 0;
+		this.showAnswer();
     }
 
 	showAnswer() {
-        this.answer.innerHTML = 'Arv: ' + this.number;
+		this.answer.innerHTML = 'Arv: ' + this.number;
     }
     
 }
